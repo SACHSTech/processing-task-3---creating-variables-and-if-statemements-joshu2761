@@ -14,6 +14,8 @@ public class Sketch extends PApplet {
   int cloud2LocationX = myRandom.nextInt(500);
   int cloud2LocationY = myRandom.nextInt(250);
 
+  //Randomizes Tree location
+  int treeLocation = myRandom.nextInt(250);
 
   public void settings() {
     size(500, 500);
@@ -74,9 +76,9 @@ public class Sketch extends PApplet {
       stroke(255, 255, 255);
     }
     //Cloud 1:
-    ellipse(cloud1LocationX, cloud1LocationY, (float)(width / 8), (float)(height / 8));
-    ellipse(cloud1LocationX + (float)(width / 10), cloud1LocationY, (float)(width / 8), (float)(height / 8));
-    ellipse(cloud1LocationX + (float)(width / 10) * 2, cloud1LocationY, (float)(width / 8), (float)(height / 8));
+    ellipse(cloud1LocationX, cloud1LocationY, (float)(width * 0.125), (float)(height * 0.125));
+    ellipse(cloud1LocationX + (float)(width * 0.1), cloud1LocationY, (float)(width * 0.125), (float)(height * 0.125));
+    ellipse(cloud1LocationX + (float)(width * 0.1) * 2, cloud1LocationY, (float)(width * 0.125), (float)(height * 0.125));
     //Cloud 2: 
     ellipse(cloud2LocationX, cloud2LocationY, (float)(width / 8), (float)(height / 8));
     ellipse(cloud2LocationX + (float)(width / 10), cloud2LocationY, (float)(width / 8), (float)(height / 8));
@@ -95,7 +97,7 @@ public class Sketch extends PApplet {
       fill(29, 201, 0);
       stroke(29, 201, 0);
     }
-    rect(0, (float)(height / 1.14), width, (float)(height / 8));
+    rect(0, (float)(height * 0.88), width, (float)(height * 0.125));
   
 
     //Draws base of the house
@@ -110,7 +112,7 @@ public class Sketch extends PApplet {
       fill(255, 222, 59);
       stroke(255, 222, 59);
     }
-    rect((float)(width / 1.6), (float)(height / 1.6), (float)(width / 4), (float)(height / 4));
+    rect((float)(width * 0.625), (float)(height * 0.625), (float)(width * 0.25), (float)(height * 0.25));
 
 
     //Draws door of the house
@@ -125,7 +127,7 @@ public class Sketch extends PApplet {
       stroke(185, 122, 87);
     }
     strokeWeight((float)(width / 80));
-    rect((float)(width / 1.5), (float)(height / 1.33), (float)(width / 20), (float)(height / 8));
+    rect((float)(width * 0.67), (float)(height * 0.75), (float)(width * 0.05), (float)(height * 0.125));
 
 
     //Draws window of the house
@@ -139,7 +141,7 @@ public class Sketch extends PApplet {
     }
     stroke(0, 0, 0);
     strokeWeight(2);
-    rect((float)(width / 1.33), (float)(height / 1.33), (float)(width / 10), (float)(height / 10));
+    rect((float)(width * 0.75), (float)(height * 0.75), (float)(width * 0.1), (float)(height *));
 
 
     //Draws the roof of the house
@@ -153,7 +155,7 @@ public class Sketch extends PApplet {
       fill(166, 0, 0);
       stroke(166, 0, 0);
     }
-    triangle((float)(width / 1.6), (float)(height / 1.6), (float)(width / 1.33), (float)(height / 2), (float)(width / 1.14), (float)(height / 1.6));
+    triangle((float)(width * 0.625), (float)(height * 0.625), (float)(width * 0.75), (float)(height * 0.5), (float)(width * 0.88), (float)(height * 0.625));
 
 
     //Draws a tree
@@ -167,7 +169,7 @@ public class Sketch extends PApplet {
       stroke(122, 81, 58);
     }    
     strokeWeight((float)(width/16));
-    line((float)(width / 4), (float)(height / 1.14), (float)(width / 4), (float)(height / 1.6));
+    line(treeLocation, (float)(height * 0.88), treeLocation, (float)(height * 0.625));
     //Leaves:
     //Calculates leaves colour based on time of day
     //At night time it shifts to a dark green
@@ -181,7 +183,7 @@ public class Sketch extends PApplet {
       stroke(4, 122, 0);
     }
     strokeWeight(0);
-    ellipse((float)(width / 4), (float)(height / 2), (float)(width / 4), (float)(height / 4));
+    ellipse(treeLocation, (float)(height / 2), (float)(width / 4), (float)(height / 4));
 
 
     //Declares the font:
