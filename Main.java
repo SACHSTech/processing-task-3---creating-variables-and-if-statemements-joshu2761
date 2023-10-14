@@ -1,9 +1,9 @@
 import processing.core.PApplet;
 
 /**
- * Main class to execute sketch
+ * Draws a house, tree, clouds and sun. There is a day-night cycle and the cloud and tree location are randomized. 
+ * 
  * @JoshuaYin
- *
  */
 class Main {
   public static void main(String[] args) {
